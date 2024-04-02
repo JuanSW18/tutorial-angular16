@@ -1,0 +1,36 @@
+<form [formGroup]="presenter.form">
+  <mat-form-field>
+    <mat-label>Nombre del producto</mat-label>
+    <input formControlName="name" matInput placeholder="Nombre del producto">
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Categoria</mat-label>
+    <mat-select formControlName="category">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Precio</mat-label>
+    <input formControlName="price" matInput placeholder="Precio">
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Stock</mat-label>
+    <input formControlName="stock" matInput placeholder="Stock">
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <br>
+  <button
+    mat-stroked-button
+    color="accent"
+    (click)="onProcessForm()"
+    [disabled]="presenter.form.invalid">Register</button>
+</form>
