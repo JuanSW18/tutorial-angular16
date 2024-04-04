@@ -15,6 +15,14 @@
   </mat-form-field>
   <br>
   <mat-form-field>
+    <mat-label>Estado civil</mat-label>
+    <mat-select formControlName="civilStatus">
+      <mat-option *ngFor="let item of civilStatusList" [value]="item">{{ item.nameCivilStatus }}</mat-option>
+    </mat-select>
+    <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field>
     <mat-label>Categoria</mat-label>
     <mat-select formControlName="category">
       <mat-option value="option">Option</mat-option>

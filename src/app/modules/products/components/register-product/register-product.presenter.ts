@@ -12,6 +12,7 @@ export class RegisterProductPresenter {
     this.form =  this.fb.group({
       name: this.fb.control(null, [Validators.required]),
       country: this.fb.control(null, [Validators.required]),
+      civilStatus: this.fb.control(null, [Validators.required]),
       category: this.fb.control(null, [Validators.required]),
       price: this.fb.control(null, [Validators.required]),
       stock: this.fb.control(null, [Validators.required]),
