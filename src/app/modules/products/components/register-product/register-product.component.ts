@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterProductPresenter } from './register-product.presenter';
+import { CountryService } from 'src/app/shared/services/country.service';
+import { ICountryItem } from 'src/app/shared/interfaces/country.interface';
 
 @Component({
   selector: 'app-register-product',
@@ -9,12 +11,24 @@ import { RegisterProductPresenter } from './register-product.presenter';
 })
 export class RegisterProductComponent implements OnInit {
 
-  constructor (public presenter: RegisterProductPresenter) {
+  countryList: ICountryItem[];
 
+  constructor (public presenter: RegisterProductPresenter,
+    private _countryService: CountryService) {
   }
 
   ngOnInit(): void {
     this.presenter.createForm();
+    this.getCountries();
+  }
+
+  getCountries() {
+    this._countryService.getCountries().subscribe({
+      next: (data) => {
+        this.countryList = data.data;
+      },
+      error: (err) => {}
+    });
   }
 
   onProcessForm() {

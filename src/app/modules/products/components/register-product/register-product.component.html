@@ -7,6 +7,14 @@
   </mat-form-field>
   <br>
   <mat-form-field>
+    <mat-label>Pais</mat-label>
+    <mat-select formControlName="country">
+      <mat-option *ngFor="let item of countryList" [value]="item">{{ item.nameCountry }}</mat-option>
+    </mat-select>
+    <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field>
     <mat-label>Categoria</mat-label>
     <mat-select formControlName="category">
       <mat-option value="option">Option</mat-option>

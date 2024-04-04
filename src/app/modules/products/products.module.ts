@@ -7,6 +7,7 @@ import { DetailComponent } from './views/detail/detail.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CountryService } from 'src/app/shared/services/country.service';
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    CountryService
   ]
 })
 export class ProductsModule { }
