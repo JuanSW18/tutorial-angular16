@@ -9,6 +9,7 @@ import { RegisterProductComponent } from './components/register-product/register
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryService } from 'src/app/shared/services/country.service';
 import { CivilStatusService } from 'src/app/shared/services/civil-status.service';
+import { CustomerService } from './services/customer.service';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CivilStatusService } from 'src/app/shared/services/civil-status.service
   providers: [
     CountryService,
     CivilStatusService,
+    CustomerService,
   ]
 })
 export class ProductsModule { }
